@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat ULANG TAHUN Spesial!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8cdda, #eeb9d0, #d6bde8);
+            min-height: 100vh;
+            padding: 30px 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Efek Bunga Jatuh dari Atas */
+        .bunga-jatuh {
+            position: absolute;
+            top: -50px;
+            width: 25px;
+            opacity: 0.8;
+            animation: jatuhBunga linear infinite;
+            z-index: 0;
+        }
+        .bunga-jatuh1 { left: 5%; animation-duration: 12s; animation-delay: 0s; }
+        .bunga-jatuh2 { left: 15%; animation-duration: 15s; animation-delay: 2s; }
+        .bunga-jatuh3 { left: 25%; animation-duration: 10s; animation-delay: 1s; }
+        .bunga-jatuh4 { left: 40%; animation-duration: 13s; animation-delay: 3s; }
+        .bunga-jatuh5 { left: 55%; animation-duration: 11s; animation-delay: 0s; }
+        .bunga-jatuh6 { left: 70%; animation-duration: 14s; animation-delay: 2s; }
+        .bunga-jatuh7 { left: 80%; animation-duration: 9s; animation-delay: 1s; }
+        .bunga-jatuh8 { left: 90%; animation-duration: 16s; animation-delay: 4s; }
+
+        @keyframes jatuhBunga {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        /* Efek Bunga Dekoratif Lain */
+        .bunga-dekor {
+            position: absolute;
+            width: 30px;
+            opacity: 0.7;
+            animation: gerakBunga 15s infinite ease-in-out;
+            z-index: 0;
+        }
+        .dekor1 { top: 10%; right: 10%; animation-delay: 0s; }
+        .dekor2 { bottom: 15%; left: 15%; animation-delay: 2s; }
+        .dekor3 { top: 40%; left: 25%; animation-delay: 1s; }
+        .dekor4 { bottom: 25%; right: 5%; animation-delay: 3s; }
+
+        @keyframes gerakBunga {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+            100% { transform: translateY(0) scale(1); }
+        }
+
+        /* Container Utama */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Judul Besar */
+        .judul-area {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .judul-besar {
+            font-size: 3.5rem;
+            color: #c24994;
+            font-weight: 700;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+        .judul-besar::before, .judul-besar::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: #c24994;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .judul-besar::before { left: -100px; }
+        .judul-besar::after { right: -100px; }
+        .sub-judul {
+            font-size: 1.4rem;
+            color: #8a4a8f;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* Kolase Foto (Dengan Foto Bunga) */
+        .kolase-foto {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .foto-kolase {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        .foto-kolase:hover {
+            transform: scale(1.05);
+        }
+
+        /* Ucapan */
+        .ucapan-area {
+            text-align: center;
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 25px;
+            background: rgba(248, 205, 218, 0.3);
+            border-radius: 15px;
+        }
+        .nama-cewe {
+            color: #c24994;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-top: 15px;
+        }
+
+        /* Responsif */
+        @media screen and (max-width: 768px) {
+            .judul-besar {
+                font-size: 2.5rem;
+            }
+            .judul-besar::before, .judul-besar::after {
+                width: 50px;
+            }
+            .judul-besar::before { left: -70px; }
+            .judul-besar::after { right: -70px; }
+            .kolase-foto {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .foto-kolase {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Efek Bunga Jatuh dari Atas -->
+    <img src="https://cdn-icons-png.flaticon.com/128/106/106790.png" alt="Bunga Jatuh" class="bunga-jatuh bunga-jatuh1">
+    <img src="https://cdn-icons-png.flaticon.com/128/106/106809.png" alt="Bunga Jatuh" class="bunga-jatuh bunga-jatuh2">
+    <img src="https://cdn-icons-png.flaticon.com/128/106/106801.png" alt="Bunga Jatuh" class="bunga-jatuh bunga-jatuh3">
+    <img src="https://cdn-icons-png.flaticon.com/128/106/106809.png" alt="Bunga Jatuh" class="bunga-jatuh bunga-jatuh4">
+    <img src="https://cdn-icons-png.flaticon.com/128/106/106790.png" alt="Bunga Jatuh" class="bunga-jatuh bunga-jatuh5">
+    <img src="https://cdn-icons-png.flaticon.com/128/106/106801.png" alt="Bunga Jatuh" class="bunga-jatuh bunga-jatuh6">
+    <img src="https://cdn-icons-png.flaticon.com/128/106/106809.png" alt="Bunga Jatuh" class="bunga-jatuh bunga-jatuh7">
+    <img src="https://cdn-icons-png.flaticon.com/128/106/106790.png" alt="Bunga Jatuh" class="bunga-jatuh bunga-jatuh8">
+
+    <!-- Dekorasi Bunga Tambahan -->
+    <img src="https://cdn-icons-png.flaticon.com/128/106/106801.png" alt="Bunga Dekor" class="bunga-dekor dekor1">
+    <img src="https://cdn-icons-png.flaticon.com/128/106/106790.png" alt="Bunga Dekor" class="bunga-dekor dekor2">
+    <img src="https://cdn-icons-png.flaticon.com/128/106/106809.png" alt="Bunga Dekor" class="bunga-dekor dekor3">
+    <img src="https://cdn-icons-png.flaticon.com/128/106/106801.png" alt="Bunga Dekor" class="bunga-dekor dekor4">
+
+    <!-- Container Utama -->
+    <div class="container">
+        <!-- Judul Besar -->
+        <div class="judul-area">
+            <h1 class="judul-besar">Happy Birthday</h1>
+            <p class="sub-judul">ALZENA</p>
+        </div>
+
+        <!-- Kolase Foto (Campuran Foto & Bunga) -->
+        <div class="kolase-foto">
+            <!-- Ganti link foto dengan yang kamu mau -->
+            <img src="https://cdn.pixabay.com/photo/2018/01/03/08/39/girl-3061027_1280.jpg" alt="" class="foto-kolase">
+            <img src="https://cdn.pixabay.com/photo/2016/11/07/22/35/rose-1808511_1280.jpg" alt="" class="foto-kolase">
+            <img src="https://cdn.pixabay.com/photo/2019/03/15/19/19/girl-4057720_1280.jpg" alt="" class="foto-kolase">
+            <img src="https://cdn.pixabay.com/photo/2017/05/08/13/15/flowers-2295470_1280.jpg" alt="" class="foto-kolase">
+            <img src="https://cdn.pixabay.com/photo/2016/11/21/14/59/girl-1845814_1280.jpg" alt="" class="foto-kolase">
+            <img src=IMG-20260220-WA0040.jpg alt="" class="foto-kolase">
+        </div>
+
+        <!-- Ucapan -->
+        <div class="ucapan-area">
+            <p>Selamat ulang tahun yaa Makasih ya telah datang ke dalam hidupku. Sejak ada dirimu, setiap hari jadi lebih berwarna, setiap masalah jadi terasa lebih ringan, dan hidupku benar-benar berubah menjadi lebih baik dari sebelumnya. Kamu adalah kebahagiaan yang aku cari-cari.</p>
+            <p class="nama-cewe">[23 FEBRUARI 2013]</p>
+        </div>
+    </div>
+</body>
+</html>
